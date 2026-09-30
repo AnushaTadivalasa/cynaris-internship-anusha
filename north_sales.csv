@@ -1,0 +1,4 @@
+id,product,region,amount,sale_date,quantity,discount
+1,Laptop,North,85000,2026-01-15,2,0.05
+5,Phone,North,45000,2026-02-05,4,0.05
+7,Tablet,North,32000,2026-04-01,2,0.08
