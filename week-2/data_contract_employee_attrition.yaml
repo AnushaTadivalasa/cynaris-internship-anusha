@@ -1,0 +1,99 @@
+dataContractSpecification: 0.9.3
+
+id: employee-attrition-v1
+
+info:
+  title: Employee Attrition Data Contract
+  owner: data-engineering
+  producer: Anusha
+  consumer: BI-dashboard-team
+  description: Employee attrition dataset quality agreement
+
+sla:
+  freshness: "Target: within 2 hours"
+  availability: "99.5% target"
+  status: proposed
+
+models:
+  employee_attrition:
+    fields:
+
+      employee_id:
+        type: string
+        required: true
+        unique: true
+        classification: confidential
+
+      age:
+        type: integer
+        required: true
+        minimum: 18
+        maximum: 100
+        classification: confidential
+
+      gender:
+        type: string
+        classification: confidential
+
+      department:
+        type: string
+        required: true
+
+      job_level:
+        type: string
+        required: true
+
+      salary_usd:
+        type: number
+        minimum: 0
+        classification: confidential
+
+      tenure_years:
+        type: number
+        minimum: 0
+
+      work_arrangement:
+        type: string
+
+      weekly_hours:
+        type: number
+
+      attrition:
+        type: integer
+        allowed_values: [0, 1]
+
+      attrition_reason:
+        type: string
+        classification: confidential
+
+      commute_minutes:
+        type: integer
+        classification: confidential
+
+privacy:
+  personal_identifiers:
+    - employee_id
+
+  personal_data:
+    - age
+    - generation
+    - gender
+
+  confidential_employee_data:
+    - salary_usd
+    - salary_vs_market_pct
+    - burnout_score
+    - manager_relationship_score
+    - engagement_score
+    - career_growth_score
+    - attrition_reason
+
+  internal_business_data:
+    - department
+    - job_level
+
+  protection:
+    - Tokenise employee identifiers
+    - Mask personal information in reports
+    - Restrict access to confidential employee data
+    - Apply role-based access control

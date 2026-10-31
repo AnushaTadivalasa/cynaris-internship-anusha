@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Quality Validation Report</title>
+    <style>
+        body { font-family: Arial; margin: 30px; }
+        table { border-collapse: collapse; width: 70%; }
+        th, td { border: 1px solid #ccc; padding: 10px; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+    <h1>Great Expectations Validation Report</h1>
+    <h3>Total Checks: 8 | Passed: 5 | Failed: 3</h3>
+    <p>Three failures were intentionally injected for testing.</p>
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Expectation</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ExpectColumnValuesToNotBeNull</td>
+      <td>FAIL</td>
+    </tr>
+    <tr>
+      <td>ExpectColumnValuesToBeBetween</td>
+      <td>FAIL</td>
+    </tr>
+    <tr>
+      <td>ExpectColumnValuesToBeBetween</td>
+      <td>FAIL</td>
+    </tr>
+    <tr>
+      <td>ExpectColumnValuesToBeUnique</td>
+      <td>PASS</td>
+    </tr>
+    <tr>
+      <td>ExpectColumnValuesToBeBetween</td>
+      <td>PASS</td>
+    </tr>
+    <tr>
+      <td>ExpectColumnValuesToBeInSet</td>
+      <td>PASS</td>
+    </tr>
+    <tr>
+      <td>ExpectColumnValuesToNotBeNull</td>
+      <td>PASS</td>
+    </tr>
+    <tr>
+      <td>ExpectColumnValuesToNotBeNull</td>
+      <td>PASS</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
